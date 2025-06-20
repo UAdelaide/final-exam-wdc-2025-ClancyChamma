@@ -15,7 +15,8 @@ router.get('/api/walkrequests/open', async (req, res) => {
             const [rows] = await db.query(`
             SELECT
             u.username AS walker_username,
-            COUNT
+            COUNT(wr.request_id) AS total_ratings,
+            
             `);
 });
 
