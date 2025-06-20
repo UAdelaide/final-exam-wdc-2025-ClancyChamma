@@ -23,7 +23,9 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 // new
-app.get('/owner-dashboard', ())
+app.get('/owner-dashboard', (req, res) => {
+    if ()
+})
 
 // Export the app instead of listening here
 module.exports = app;
