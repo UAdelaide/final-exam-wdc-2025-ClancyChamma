@@ -71,20 +71,7 @@
                 },
                 methods: {
                     async fetchDog() {
-                        try {
-                            const dogData = await fetch('https://dog.ceo/api/breeds/image/random');
-                            const result = await dogData.json();
-                            this.dogImage = data.message;
-                            this.dogBreed = "Random Dog";
-                        },
 
-                        toggleDetails() {
-                            if (this.showDetails) {
-                                this.showDetails = false;
-                            } else {
-                                this.showDetails = true;
-                            }
-                        }
                     },
                 }
 
