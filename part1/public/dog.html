@@ -40,20 +40,6 @@
         <div id="app">
             <h1>Dog Walking Service Dashboard</h1>
             <div clas="dashboard">
-                <h2>{{ dogBreed }}</h2>
-                <img src="dogImage" alt="Dog picture" class="dog-image">
-
-                <button type="button" @click="fetchDog">New Dog</button>
-                <button type="button" @click="toggleDetails">
-                    {{ showDetails ? 'Hide Details' : 'Show Details' }}
-                </button>
-
-                <div class="hidden-details" v-if="showDetails">
-                    <p><strong>Temprement:</strong>Friendly</p>
-                    <p><strong>Life Expectancy:</strong> 10-15 years</p>
-                    <p><strong>Height:</strong> 20-30 inches</p>
-                    <p><strong>Weight:</strong> 50-90 lbs</p>
-                </div>
             </div>
         </div>
         <script>
