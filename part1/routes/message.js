@@ -33,7 +33,7 @@ router.get('/walkers/summary', async (req, res) => {
                 COUNT(DISTINCT wa.request_id) AS total_walks
             FROM Users u
             LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id
-            LEFT JOIN
+            LEFT JOIN WalkRatings wr ON u
         `);
         res.json(rows);
 });
