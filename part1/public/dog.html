@@ -53,7 +53,9 @@
                 <div class="card">
                     <h2>Walk Requests</h2>
                     <ul>
-                        <li v-for="request in
+                        <li v-for="request in openRequests">
+                            {{ request.dog_name }} - Requested by: {{ request.owner_name }}
+                        </li>
                     </ul>
                 </div>
             </div>
