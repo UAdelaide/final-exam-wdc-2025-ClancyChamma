@@ -1,6 +1,6 @@
 var express = require('express'); // Importing express to create a router
-var router = express.Router();
-var db = require('../db');
+var router = express.Router(); // Importing the database connection module
+var db = require('../db');  // Importing the database connection module
 
 router.get('/dogs', async (req, res) => {
         const [rows] = await db.query(`
