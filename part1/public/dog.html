@@ -23,9 +23,9 @@
     <body>
         <div id="app">
             <h1>Dog of the Day</h1>
-            <div clas="dog-card">
+            <div class="dog-card">
                 <h2>{{ dogBreed }}</h2>
-                <img src="dogImage" alt="Dog picture" class="dog-image">
+                <img :src="dogImage" alt="Dog picture" class="dog-image">
 
                 <button type="button" @click="fetchDog">New Dog</button>
                 <button type="button" @click="toggleDetails">More Details</button>
@@ -56,16 +56,15 @@
                         try {
                             const dogData = await fetch('https://dog.ceo/api/breeds/image/random');
                             const result = await dogData.json();
-                            this.dogImage = data.message;
+                            this.dogImage = result.message;
                             this.dogBreed = "Random Dog";
-                        },
-                        toggleDetails() {
-                            if (this.showDetails) {
-                                this.showDetails = false;
-                            } else {
-                                this.showDetails = true;
-                            }
+                        } catch (error) {
+                            console.error('Failed to fetch dog image:', error);
                         }
+                    },
+                    toggleDetails() {
+                        this.showDetails = !this.showDetails;
+                    }
                     },
                 }
 
