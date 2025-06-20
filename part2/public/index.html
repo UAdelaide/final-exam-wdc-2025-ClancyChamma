@@ -18,7 +18,8 @@
       <h2 class="card-title">Login</h2>
       <form @submit.prevent="login">
         <div class="mb3">
-          
+          <label for="username" class="form-label">USername</label>
+          <input type="email" class="form-control" id="email" v-model="email" required>
         </div>
       </form>
 
