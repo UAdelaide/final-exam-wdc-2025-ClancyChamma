@@ -24,7 +24,7 @@ app.use('/api/users', userRoutes);
 
 // new
 app.get('/owner-dashboard', (req, res) => {
-    if ()
+    if (!req.session.user || req.session.user.role)
 })
 
 // Export the app instead of listening here
