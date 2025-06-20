@@ -17,7 +17,7 @@ router.get('/api/walkrequests/open', async (req, res) => {
             wr.duration_minutes, wr.location, u.username AS owner_username
             FROM WalkRequests wr
             JOIN Dogs d ON wr.dog_id = d.dog_id
-            JOIN Users u ON u.owner_id = u.user_id
+            JOIN Users u ON d.owner_id = u.user_id
             WHERE wr.status = 'open'
             `);
 });
