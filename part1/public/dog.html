@@ -53,7 +53,7 @@
                 max-width: 100%;
                 height: auto;
                 border-radius: 6px;
-                margin-top: 10px;
+                margin-top 10px;
             }
         </style>
     </head>
@@ -64,42 +64,42 @@
                 <div class="card">
                     <h2>Our Dogs</h2>
                     <ul>
-                        <li v-for="dog in dogs" :key="dog.dog_id">
+                        <li v-for="dog in dogs">
                             {{ dog.dog_name }} ({{ dog.size}}) - Owner: {{ dog.owner_username }}
                         </li>
                     </ul>
-                    <button @click="fetchDogs">Refresh Dogs</button>
+                    <button type="button" @click="fetchDogs">Refresh Dogs</button>
                 </div>
 
                 <div class="card">
                     <h2>Walk Requests</h2>
                     <ul>
-                        <li v-for="request in openRequests" :key="request.request_id">
+                        <li v-for="request in openRequests">
                             {{ request.dog_name }} at {{ formatTime(request.requested_time) }}<br>
                             Duration: {{ request.duration_minutes }} mins - Location: {{ request.location }}<br>
                             Owner: {{ request.owner_username }}
                         </li>
                     </ul>
-                    <button @click="fetchOpenRequests">Refresh Requests</button>
+                    <button type="button" @click="fetchOpenRequests">Refresh Requests</button>
                 </div>
 
                 <div class="card">
                     <h2>Walk performance</h2>
                     <ul>
-                        <li v-for="walker in walkerSummary" :key="walker.walker_id">
+                        <li v-for="walker in walkerSummary">
                             {{ walker.walker_username }}<br>
                             Total Walks: {{ walker.total_walks }}<br>
                             Average Rating: {{ walker.average_rating ? walker.average_rating.toFixed(1) : 'N/A' }}
                         </li>
                     </ul>
-                    <button @click="fetchWalkerSummary">Refresh Walker Summary</button>
+                    <button type="button" @click="fetchWalkerSummary">Refresh Walker Summary</button>
                 </div>
 
                 <div class="card">
                     <h2>Dog of the Day</h2>
                     <img :src="dogOfTheDay.image" alt="Dog of the Day" class="dog-image" v-if="dogOfTheDay.image">
                     <p v-if="dogOfTheDay.breed">Breed: {{ dogOfTheDay.breed }}</p>
-                    <button @click="fetchRandomDog">New Dog</button>
+                    <button type="button" @click="fetchRandomDog">New Dog</button>
                 </div>
             </div>
         </div>
