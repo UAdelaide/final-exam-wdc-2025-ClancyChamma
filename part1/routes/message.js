@@ -27,6 +27,7 @@ router.get('/api/walkrequests/open', async (req, res) => {
             FROM Users u
             LEFT JOIN WalkRequests wr ON u.user_id = wr.walker_id
         `);
+        res.json(rows);
 });
 
 module.exports = router;
