@@ -131,6 +131,7 @@
                             this.dogs = await response.json();
                         } catch (error) {
                             console.error('Error with fetching dogs:', error);
+                            alert('Failed to load dogs. Please try again later.');
                         }
                     },
 
