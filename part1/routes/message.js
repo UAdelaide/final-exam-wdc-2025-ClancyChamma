@@ -11,5 +11,6 @@ router.get('/dogs', async (req, res) => {
         res.json(rows);
 });
 
+router
 
 module.exports = router;
