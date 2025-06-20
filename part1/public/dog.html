@@ -104,7 +104,10 @@
                 },
                 methods: {
                     async fetchDog() {
-                        try
+                        try {
+                            const reponse = await fetch('/api/dogs');
+                            
+                        }
                     },
                 }
 
