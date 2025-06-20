@@ -56,7 +56,7 @@
                         <li v-for="request in openRequests">
                             {{ request.dog_name }} at {{ formatTime(request.requted_time) }}<br>
                             Duration: {{ request.duration_minutes }} mins - Location: {{ request.location }}<br>
-                            Owner: {{ request.owner_name }}
+                            Owner: {{ request.owner_username }}
                         </li>
                     </ul>
                 </div>
