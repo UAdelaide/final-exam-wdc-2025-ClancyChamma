@@ -4,5 +4,6 @@ var db = require('../db');
 
 router.get('/api/dogs', async (req, res) => {
     try {
-        const [rows] = await db.q
+        const [rows] = await db.query(`
+            `)
 })
