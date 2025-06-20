@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('../db');
 
 router.get('/dogs', async (req, res) => {
-        const [dogs] = await db.query(`
+        const [rows] = await db.query(`
             SELECT d.name AS dog_name, d.size, u.username AS owner_username
             FROM Dogs d
             JOIN Users u ON d.owner_id = u.user_id
@@ -12,7 +12,7 @@ router.get('/dogs', async (req, res) => {
 });
 
 router.get('/api/walkrequests/open', async (req, res) => {
-    const []
+    const [rows]
 })
 
 module.exports = router;
