@@ -74,7 +74,7 @@
                     <h2>Walk Requests</h2>
                     <ul>
                         <li v-for="request in openRequests">
-                            {{ request.dog_name }} at {{ formatTime(request.requsted_time) }}<br>
+                            {{ request.dog_name }} at {{ formatTime(request.requested_time) }}<br>
                             Duration: {{ request.duration_minutes }} mins - Location: {{ request.location }}<br>
                             Owner: {{ request.owner_username }}
                         </li>
