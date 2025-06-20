@@ -17,7 +17,7 @@ router.get('/api/walkrequests/open', async (req, res) => {
             `);
 });
 
-router.get('/api/walkrequests/open', async (req, res) => {
+router.get('/api/walkers/summary', async (req, res) => {
         const [rows] = await db.query(`
             SELECT
             u.username AS walker_username,
