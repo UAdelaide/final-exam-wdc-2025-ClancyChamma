@@ -17,8 +17,8 @@ router.get('/api/walkrequests/open', async (req, res) => {
             `);
 });
 
-// router.get('/api/walkrequests/open', async (req, res) => {
-//             const [rows] = await db.query(`
+router.get('/api/walkrequests/open', async (req, res) => {
+            const [rows] = await db.query(`
             SELECT
             u.username AS walker_username,
             COUNT(wr.request_id) AS total_ratings,
@@ -26,7 +26,7 @@ router.get('/api/walkrequests/open', async (req, res) => {
             COUNT(DISTINCT wa.request_id) AS total_walks
             FROM Users u
             LEFT JOIN WalkRequests wr ON u.user_id = wr.walker_id
-//             `);
-// });
+            `);
+});
 
 module.exports = router;
