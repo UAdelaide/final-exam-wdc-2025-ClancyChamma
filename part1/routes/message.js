@@ -7,7 +7,7 @@ router.get('/dogs', async (req, res) => {
             SELECT d.name AS dog_name, d.size, u.username AS owner_username
             FROM Dogs d
             JOIN Users u ON d.owner_id = u.user_id
-            `);
+        `);
         res.json(rows);
 });
 
@@ -19,7 +19,7 @@ router.get('/walkrequests/open', async (req, res) => {
             JOIN Dogs d ON wr.dog_id = d.dog_id
             JOIN Users u ON d.owner_id = u.user_id
             WHERE wr.status = 'open'
-            `);
+        `);
         res.json(rows);
 });
 
