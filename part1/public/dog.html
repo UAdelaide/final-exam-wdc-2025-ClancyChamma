@@ -127,7 +127,7 @@
                     async fetchDogs() {
                         try {
                             const response = await fetch('/api/dogs');
-                            if (!response)
+                            if (!response.ok) throw new Error('Network response was not ok');
                             this.dogs = await response.json();
                         } catch (error) {
                             console.error('Error with fetching dogs:', error);
