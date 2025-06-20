@@ -11,8 +11,8 @@ router.get('/dogs', async (req, res) => {
         res.json(rows);
 });
 
-router.get('/api/walks', async (req, res) => {
-
+router.get('/api/walkrequests/open', async (req, res) => {
+    const 
 })
 
 module.exports = router;
