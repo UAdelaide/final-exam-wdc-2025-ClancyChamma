@@ -9,7 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
-    secret: '05ac256a9dd497ef1e4da0af47a047291a30fc2053c3965e092da9bb5470ec8a'
+    secret: '05ac256a9dd497ef1e4da0af47a047291a30fc2053c3965e092da9bb5470ec8a',
+    resave: false,
 }))
 
 // Routes
