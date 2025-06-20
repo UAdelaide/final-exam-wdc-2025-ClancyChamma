@@ -87,7 +87,13 @@
             createApp({
                 data() {
                     return {
-                        
+                        dogs: [],
+                        openRequests: [],
+                        walkerSummary: [],
+                        dogOfTheDay: {
+                            image: '',
+                            breed: ''
+                        }
                     };
                 },
                 mounted() {
