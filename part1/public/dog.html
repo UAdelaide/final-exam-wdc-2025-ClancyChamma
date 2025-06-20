@@ -64,7 +64,7 @@
                     <h2>Our Dogs</h2>
                     <ul>
                         <li v-for="dog in dogs">
-                            {{ dog.dog_name }} ({{ dog.size}}) - Owner: {{ dog.owner_name }}
+                            {{ dog.dog_name }} ({{ dog.size}}) - Owner: {{ dog.owner_username }}
                         </li>
                     </ul>
                     <button type="button" @click="fetchDogs"></button>
