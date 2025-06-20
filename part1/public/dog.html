@@ -123,7 +123,7 @@
                     this.fetchRandomDog();
                 },
                 methods: {
-                    async fetchDog() {
+                    async fetchDogs() {
                         try {
                             const reponse = await fetch('/api/dogs');
                             this.dogs = await reponse.json();
