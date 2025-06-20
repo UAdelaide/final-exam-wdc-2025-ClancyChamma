@@ -86,7 +86,7 @@
                 <div class="card">
                     <h2>Walk performance</h2>
                     <ul>
-                        <li v-for="walker in walkerSummary" :key="walker.walker_u">
+                        <li v-for="walker in walkerSummary" :key="walker.walker_username">
                             {{ walker.walker_username }}<br>
                             Total Walks: {{ walker.total_walks }}<br>
                             Average Rating: {{ walker.average_rating ? walker.average_rating.toFixed(1) : 'N/A' }}
