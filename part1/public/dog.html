@@ -97,13 +97,13 @@
                 <div class="card">
                     <h2>Dog of the Day</h2>
                     <img :src="dogOfTheDay.image" alt="Dog of the Day" class="dog-image" v-if="dogOfTheDay.image">
-                    <p v-if="dogOfTheDay.bred">Breed: {{ dogOfTheDay.breed }}</p>
+                    <p v-if="dogOfTheDay.breed">Breed: {{ dogOfTheDay.breed }}</p>
                     <button type="button" @click="fetchRandomDog">New Dog</button>
                 </div>
             </div>
         </div>
         <script>
-            const { createApp} = Vue;
+            const { createApp } = Vue;
             createApp({
                 data() {
                     return {
@@ -140,7 +140,6 @@
                             console.error('Error with fetching open requests:', error);
                         }
                     },
-
                     async fetchWalkerSummary() {
                         try {
                             const response = await fetch('/api/walkers/summary');
@@ -149,7 +148,6 @@
                             console.error('Error with fetching walker summary:', error);
                         }
                     },
-
                     async fetchRandomDog() {
                         try{
                             const response = await fetch('https://dog.ceo/api/breeds/image/random');
