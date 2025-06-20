@@ -106,7 +106,8 @@
                     async fetchDog() {
                         try {
                             const reponse = await fetch('/api/dogs');
-                            
+                            this.dogs = await reponse.json();
+                        } catch (error) {
                         }
                     },
                 }
