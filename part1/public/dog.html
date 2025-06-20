@@ -112,7 +112,12 @@
                         }
                     },
                     async fetchOpenRequests() {
-                        
+                        try {
+                            const response = await fetch('/api/walkrequests/open');
+                            this.openRequests = await response.json();
+                        } catch (error) {
+                            console.error('Error with fetching open requests:', error);
+                        }
                     }
                 }
 
