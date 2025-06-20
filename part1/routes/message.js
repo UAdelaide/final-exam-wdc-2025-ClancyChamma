@@ -17,7 +17,7 @@ router.get('/api/walkrequests/open', async (req, res) => {
             u.username AS walker_username,
             COUNT(wr.request_id) AS total_ratings,
             AVG(wr.rating) AS average_rating,
-            COUNT(DIS)
+            COUNT(DISTINCT wa.re)
             `);
 });
 
