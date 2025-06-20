@@ -2,4 +2,6 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db');
 
-router.get('/api/dogs', async (req, res) => 
+router.get('/api/dogs', async (req, res) => {
+    ``
+})
