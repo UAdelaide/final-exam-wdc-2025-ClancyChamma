@@ -12,7 +12,7 @@ router.get('/dogs', async (req, res) => {
 });
 
 router.get('/api/walkrequests/open', async (req, res) => {
-    const 
+    const []
 })
 
 module.exports = router;
