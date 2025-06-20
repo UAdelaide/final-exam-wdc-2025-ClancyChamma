@@ -123,7 +123,8 @@
                         const response = await fetch('https://dog.ceo/api/breeds/image/random');
                         const data = await response.json();
                         this.dogOfTheDay.image = data.message;
-                        const breed = data.message.split('/')[4]; 
+                        const breed = data.message.split('/')[4];
+                        this.dogOfTheDay.breed = breed.split
                     }
                 }
 
