@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express'); // Importing express to create a router
 var router = express.Router();
 var db = require('../db');
 
