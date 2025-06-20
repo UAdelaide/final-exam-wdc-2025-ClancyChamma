@@ -14,7 +14,8 @@ router.get('/dogs', async (req, res) => {
 router.get('/api/walkrequests/open', async (req, res) => {
             const [rows] = await db.query(`
             SELECT
-            u
+            u.username AS walker_username,
+            COUNT
             `);
 });
 
