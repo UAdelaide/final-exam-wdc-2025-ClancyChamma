@@ -124,7 +124,7 @@
                         const data = await response.json();
                         this.dogOfTheDay.image = data.message;
                         const breed = data.message.split('/')[4];
-                        this.dogOfTheDay.breed = breed.split
+                        this.dogOfTheDay.breed = breed.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).
                     }
                 }
 
