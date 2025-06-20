@@ -61,7 +61,11 @@
                         },
 
                         toggleDetails() {
-                            
+                            if (this.showDetails) {
+                                this.showDetails = false;
+                            } else {
+                                this.showDetails = true;
+                            }
                         }
                     },
                 }
