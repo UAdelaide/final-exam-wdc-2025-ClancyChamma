@@ -74,7 +74,7 @@
                 <div class="card">
                     <h2>Walk Requests</h2>
                     <ul>
-                        <li v-for="request in openRequests" :>
+                        <li v-for="request in openRequests" :key="request.request_id">
                             {{ request.dog_name }} at {{ formatTime(request.requested_time) }}<br>
                             Duration: {{ request.duration_minutes }} mins - Location: {{ request.location }}<br>
                             Owner: {{ request.owner_username }}
@@ -86,7 +86,7 @@
                 <div class="card">
                     <h2>Walk performance</h2>
                     <ul>
-                        <li v-for="walker in walkerSummary">
+                        <li v-for="walker in walkerSummary" :key="walker.walker_u">
                             {{ walker.walker_username }}<br>
                             Total Walks: {{ walker.total_walks }}<br>
                             Average Rating: {{ walker.average_rating ? walker.average_rating.toFixed(1) : 'N/A' }}
