@@ -127,22 +127,18 @@
                     async fetchDogs() {
                         try {
                             const response = await fetch('/api/dogs');
-                            if (!response.ok) throw new Error('Network response was not ok');
                             this.dogs = await response.json();
                         } catch (error) {
                             console.error('Error with fetching dogs:', error);
-                            alert('Failed to load dogs. Please try again later.');
                         }
                     },
 
                     async fetchOpenRequests() {
                         try {
                             const response = await fetch('/api/walkrequests/open');
-                            if (!response.ok) throw new Error('Network response was not ok');
                             this.openRequests = await response.json();
                         } catch (error) {
                             console.error('Error with fetching open requests:', error);
-                            alert('Failed to load open requests. Please try again later.');
                         }
                     },
                     async fetchWalkerSummary() {
