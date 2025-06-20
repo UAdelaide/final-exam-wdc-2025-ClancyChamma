@@ -25,7 +25,9 @@ app.use('/api/users', userRoutes);
 // new
 app.get('/owner-dashboard', (req, res) => {
     if (!req.session.user || req.session.user.role !== 'owner') {
-        return res.redirect
+        return res.redirect('/')
+    }
+    res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 })
 
 // Export the app instead of listening here
