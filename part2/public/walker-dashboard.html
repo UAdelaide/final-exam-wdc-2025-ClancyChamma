@@ -55,8 +55,10 @@
             const userData = await response.json();
             currentUser.value = userDate;
             return userData;
-          } catch
-
+          } catch (err) {
+            error.value = err.message;
+            return null;
+          }
         }
 
         async function loadWalkRequests() {
