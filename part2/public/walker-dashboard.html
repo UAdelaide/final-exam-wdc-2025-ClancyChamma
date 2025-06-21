@@ -8,23 +8,8 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body class="bg-light">
-  <script>
-    (function() {
-      fetch('/api/users/me', { credentials: 'include' })
-        .then(response => response.json())
-        .then(data => {
-          if (data.error || data.role !== 'walker') {
-            window.location.href = '/index.html';
-          }
-        })
-        .catch(() => {
-          window.location.href = '/index.html';
-        });
-    })();
-  </script>
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-success">Walker Dashboard</h1>
-    <button type="button" @click="logout" class="btn btn-outline-danger mb-4">Logout</button>
 
     <!-- Alert messages -->
     <div v-if="message" class="alert alert-info">{{ message }}</div>
@@ -60,7 +45,6 @@
         const error = ref('');
         const user = 3;
 
-
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
@@ -90,15 +74,6 @@
           }
         }
 
-        async function logout() {
-          try {
-            await fetch('/api/users/logout', { method: 'POST', credentials: 'include' });
-            window.location.href = '/index.html';
-          } catch (err) {
-            error.value = 'Failed to log out';
-          }
-        }
-
         onMounted(() => {
           loadWalkRequests();
         });
@@ -107,8 +82,7 @@
           walks,
           message,
           error,
-          applyToWalk,
-          logout
+          applyToWalk
         };
       }
     }).mount('#app');
