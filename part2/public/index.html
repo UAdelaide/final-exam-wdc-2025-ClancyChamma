@@ -13,6 +13,19 @@
     <h1 class="mb-4 text-primary">Welcome to the Dog Walking Service!</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
+
+    <div class="card p-4 mb-4" v-if="!isLoggedIn">
+      <h2 class="card-title">Login</h2>
+      <form @submit.prevent="login">
+        <div class="mb3">
+          <label for="username" class="form-label">USername</label>
+          <input type="text" class="form-control" id="username" v-model="email" required>
+        </div>
+      </form>
+
+
+    </div>
+
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
   </div>
