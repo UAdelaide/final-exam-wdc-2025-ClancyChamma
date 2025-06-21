@@ -74,7 +74,7 @@
               body: JSON.stringify(loginForm.value)
             });
 
-            cosnt data = await response.json();
+            const data = await response.json();
             if (!response.ok) {
             throw new Error(data.message || 'Login failed');
             }
