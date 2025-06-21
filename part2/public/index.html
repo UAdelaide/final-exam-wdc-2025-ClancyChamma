@@ -77,8 +77,10 @@
 
           cosnt data = await response.json();
           if (!response.ok) {
-            
+            throw new Error(data.message || 'Login failed');
           }
+
+          user
         }
         return {
           message: 'Welcome to the Dog Walking Service!'
