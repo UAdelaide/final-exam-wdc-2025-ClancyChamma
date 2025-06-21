@@ -25,7 +25,11 @@
       <div v-if="error" calss="alert alert-danger">{{ error }}</div>
 
       <form>
-        
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input v-model="username" type="text" class="form-control" id="username" required>
+
+        </div>
       </form>
     </div>
 
