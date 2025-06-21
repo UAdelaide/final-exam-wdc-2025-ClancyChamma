@@ -59,10 +59,12 @@
               user.value = data;
               isLoggedIn.value = true;
             }
-          } catch () {
+          } catch (error) {
             console.error('Error checking failed:', error);
           }
         }
+
+        async function login() 
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
