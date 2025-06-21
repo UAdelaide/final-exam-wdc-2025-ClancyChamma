@@ -90,7 +90,8 @@
         const dashboardLink = ref('#');
         if (user.value) {
           dashboardLink.value = user.value.role === 'owner'
-          
+            ? '/owner-dashboard'
+            : '/walker-dashboard.html';
         }
         return {
           message: 'Welcome to the Dog Walking Service!'
