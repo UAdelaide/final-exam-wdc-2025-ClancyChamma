@@ -130,6 +130,15 @@
           }
         }
 
+        async function logout() {
+          try {
+            await fetch('/api/users/logout', { method: 'POST', credentials: 'include' });
+            window.location.href = '/index.html';
+          } catch (err) {
+            error.value = 'Failed to log out';
+          }
+        }
+
         onMounted(() => {
           loadWalks();
         });
