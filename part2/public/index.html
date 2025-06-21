@@ -80,7 +80,8 @@
             throw new Error(data.message || 'Login failed');
           }
 
-          user
+          user.values = data.user;
+          isLoggedIn.value = true;
         }
         return {
           message: 'Welcome to the Dog Walking Service!'
