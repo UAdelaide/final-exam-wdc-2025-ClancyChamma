@@ -49,7 +49,7 @@
         async function getCurrentUser() {
           try {
             const response = wait fetch('/api/user/me');
-            if (!response.ok) throw new Error ('Failde to ')
+            if (!response.ok) throw new Error ('Failed to fetch user data');
           }
         }
 
