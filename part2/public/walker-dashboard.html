@@ -8,7 +8,24 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body class="bg-light">
-  
+    <script>
+    fetch('/api/user/me')
+      .then(response => {
+        if (!response.ok) {
+          winddow.location.href = '/';
+        }
+        return response.json();
+      })
+      .then(user => {
+        if(user.role !== 'owner' ) {
+          window.location.href = '/';
+        }
+      })
+      .catch(error => {
+        console.error('Session check failed:', error);
+        window.location.href = '/';
+      })
+  </script>
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-success">Walker Dashboard</h1>
 
