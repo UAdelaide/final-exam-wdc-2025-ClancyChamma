@@ -9,7 +9,10 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
-    secret: '05ac256a9dd497ef1e4da0af47a047291a30fc2053c3965e092da9bb5470ec8a',
+    secret: 'b706835de79a2b4e80506f582af3676ac8361638',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
 }))
 
 // Routes
@@ -18,6 +21,21 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
+
+// new
+app.get('/owner-dashboard', (req, res) => {
+    if (!req.session.user || req.session.user.role !== 'owner') {
+        return res.redirect('/')
+    }
+    res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
+});
+
+app.get('/walker-dashboard', (req, res) => {
+    if (!req.session.user || req.session.user.role !== 'walker') {
+        return res.redirect('/')
+    }
+    res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
+});
 
 // Export the app instead of listening here
 module.exports = app;
