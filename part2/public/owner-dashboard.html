@@ -13,7 +13,9 @@
       fetch('/api/users/me,' { credentials: 'include' })
       .then(response => response.json())
       .then(data => {
-        if (data.error ||)
+        if (data.error || data.role != 'owner') {
+          
+        }
       })
     })
   </script>
