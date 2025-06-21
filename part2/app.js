@@ -10,6 +10,16 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
+app.use(session({
+    secret: proccess.env.SESSION_SECRET || 'dogwalksecret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 24 * 60 * 60 * 1000
+    }
+}));
+
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
