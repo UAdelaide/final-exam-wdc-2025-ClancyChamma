@@ -12,7 +12,9 @@ app.use(session({
     secret: proccess.env.SESSION_SECRET || 'dogwalksecret',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }
+    cookie: {
+        
+    }
 }))
 
 // Routes
