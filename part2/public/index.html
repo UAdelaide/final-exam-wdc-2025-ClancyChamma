@@ -64,7 +64,12 @@
           }
         }
 
-        async function login() 
+        async function login() {
+          try {
+            const response = await fetch('/api/user/login', {
+              
+          }
+        }
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
