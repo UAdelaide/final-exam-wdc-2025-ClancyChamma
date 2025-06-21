@@ -8,28 +8,13 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body class="bg-light">
-  <script>
-    (function() {
-      fetch('/api/users/me', { credentials: 'include' })
-      .then(response => response.json())
-      .then(data => {
-        if (data.error || data.role != 'owner') {
-          window.location.href = '/index.html';
-        }
-      })
-      .catch(() => {
-        window.location.href = '/index.html';
-      });
-    })();
-  </script>
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-primary">Owner Dashboard</h1>
 
     <!-- Walk request form -->
     <div class="card mb-4">
-      <div class="card-header bg-primary text-white d-flex justify-content-between">
-        <span>Create New Walk Request</span>
-        <button type="button" @click="logout" class="btn btn-sm btn-light">Logout</button>
+      <div class="card-header bg-primary text-white">
+        Create New Walk Request
       </div>
       <div class="card-body">
         <form @submit.prevent="submitWalkRequest">
@@ -130,15 +115,6 @@
           }
         }
 
-        async function logout() {
-          try {
-            await fetch('/api/users/logout', { method: 'POST', credentials: 'include' });
-            window.location.href = '/index.html';
-          } catch (err) {
-            error.value = 'Failed to log out';
-          }
-        }
-
         onMounted(() => {
           loadWalks();
         });
@@ -148,8 +124,7 @@
           walks,
           message,
           error,
-          submitWalkRequest,
-          logout
+          submitWalkRequest
         };
       }
     }).mount('#app');
