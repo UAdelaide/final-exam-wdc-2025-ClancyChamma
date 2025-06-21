@@ -78,13 +78,15 @@
             if (!response.ok) {
             throw new Error(data.message || 'Login failed');
             }
+
+            user.values = data.user;
+            isLoggedIn.value = true;
+            lohinError.value = '';
           }
 
 
 
-          user.values = data.user;
-          isLoggedIn.value = true;
-          lohinError.value = '';
+
         }
         return {
           message: 'Welcome to the Dog Walking Service!'
