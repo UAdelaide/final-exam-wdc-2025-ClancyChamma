@@ -43,7 +43,11 @@
     const { createApp } = Vue;
     createApp({
       setup() {
-        const loginForm
+        const loginForm = ref({
+          username: '',
+          password: ''
+        });
+        const
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
