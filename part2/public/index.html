@@ -75,7 +75,10 @@
             });
           }
 
-          cosnt
+          cosnt data = await response.json();
+          if (!response.ok) {
+            
+          }
         }
         return {
           message: 'Welcome to the Dog Walking Service!'
