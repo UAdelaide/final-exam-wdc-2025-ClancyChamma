@@ -6,42 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <style>
-    .login-container {
-      max-width: 400px;
-      margin: 100px auto;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background-color: #fff;
-    }
-  </style>
 </head>
 <body class="bg-light">
 
-  <div id="app" class="container">
-    <div calss="login-container">
-      <h1 class="mb-4 text-center">Welcome to the Dog Walking Service!</h1>
-      <div v-if="error" calss="alert alert-danger">{{ error }}</div>
-
-      <form>
-        <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input v-model="username" type="text" class="form-control" id="username" required>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input v-model="password" type="password" class="form-control" id="password" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100">Log In</button>
-      </form>
-    </div>
-
-    <!-- <p class="lead">Connect with trusted walkers for your beloved dog!</p>
+  <div id="app" class="container py-5">
+    <h1 class="mb-4 text-primary">{{ message }}</h1>
+    <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
-    <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a> -->
+    <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
   </div>
 
   <script>
@@ -49,41 +22,8 @@
     createApp({
       data() {
         return {
-          username: '',
-          password: '',
-          error: ''
+          message: 'Welcome to the Dog Walking Service!'
         };
-      },
-      methods: {
-        async login() {
-          this.error = '';
-          try {
-            const response = await fetch('/api/users/login', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                username: this.username,
-                password: this.password
-              }),
-              credentials: 'include'
-            });
-
-            // const result = await response.json();
-            // if (!response.ok) {
-            //   throw new Error(result.error || 'Login failed');
-            // }
-
-            if (result.user.role === 'owner') {
-              window.location.href = 'owner-dashboard.html';
-            } else if (result.user.role === 'walker')  {
-              window.location.href = 'walker-dashboard.html';
-            }
-          } catch (error) {
-            this.error = error.message;
-          }
-        }
       }
     }).mount('#app');
   </script>
