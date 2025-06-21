@@ -19,8 +19,9 @@
       <form @submit.prevent="login">
         <div class="mb3">
           <label for="username" class="form-label">USername</label>
-          <input type="text" class="form-control" id="username" v-model="email" required>
+          <input type="text" class="form-control" id="username" v-model="loginForm.username" required>
         </div>
+        
       </form>
 
 
