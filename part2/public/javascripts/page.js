@@ -188,12 +188,6 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             alert("Welcome "+this.responseText);
-            let response = JSON.parse(this.responseText);
-            if (response.role === 'owner') {
-                window.location.href = 'owner-dashboard.html';
-            } else if (response.role === 'walker') {
-                window.location.href = 'walker-dashboard.html';
-            }
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
         }
