@@ -1,25 +1,19 @@
 const express = require('express');
 const path = require('path');
-const session = require('express-session');
 require('dotenv').config();
-
+const session = require('express-session');
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
-
 app.use(session({
-    secret: proccess.env.SESSION_SECRET || 'dogwalksecret',
+    secret: '05ac256a9dd497ef1e4da0af47a047291a30fc2053c3965e092da9bb5470ec8a',
     resave: false,
     saveUninitialized: true,
-    cookie: {
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 24 * 60 * 60 * 1000
-    }
-}));
-
+    cookie: { secure: false }
+}))
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
@@ -40,8 +34,6 @@ app.get('/walker-dashboard', (req, res) => {
     if (!req.session.user || req.session.user.role !== 'walker') {
         return res.redirect('/')
     }
-    res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
-});
 
 // Export the app instead of listening here
 module.exports = app;
