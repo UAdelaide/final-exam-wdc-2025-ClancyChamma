@@ -53,7 +53,7 @@
 
         async function checkSession() {
           try {
-            const response = await fetch('/api/session');
+            const response = await fetch('/api/user/me');
             if (response.ok) {
               const data = await response.json();
               user.value = data;
