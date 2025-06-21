@@ -190,7 +190,7 @@ function login(){
             alert("Welcome "+this.responseText);
             let response = JSON.parse(this.responseText);
             if (response.role === 'owner') {
-                window.location.href = '/owner-dashboard';
+                window.location.href = 'owner-dashboard.html';
             }
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
