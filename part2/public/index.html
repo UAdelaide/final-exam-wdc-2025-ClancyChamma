@@ -49,20 +49,8 @@
     createApp({
       data() {
         return {
-          username: '',
-          password: '',
-          error: ''
+          message: 'Welcome to the Dog Walking Service!'
         };
-      },
-      methods: {
-        async login() {
-          this.error = '';
-          try {
-            const response = await fetch('/api/users/login', {
-              meth
-            })
-          }
-        }
       }
     }).mount('#app');
   </script>
