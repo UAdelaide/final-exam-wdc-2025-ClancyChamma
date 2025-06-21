@@ -83,7 +83,9 @@
           user.values = data.user;
           isLoggedIn.value = true;
           lohinError.value = '';
-        } catch
+        } catch (error) {
+          
+        }
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
