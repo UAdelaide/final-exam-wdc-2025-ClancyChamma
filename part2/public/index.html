@@ -88,7 +88,10 @@
         }
 
         const dashboardLink = ref('#');
-        if (user)
+        if (user.value) {
+          dashboardLink.value = user.value.role === 'owner'
+          
+        }
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
