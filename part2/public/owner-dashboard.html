@@ -12,6 +12,7 @@
     (function() {
       fetch('/api/users/me,' { credentials: 'include' })
       .then(response => response.json())
+      .then(data)
     })
   </script>
   <div id="app" class="container py-4">
