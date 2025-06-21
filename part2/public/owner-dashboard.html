@@ -95,15 +95,6 @@
         const message = ref('');
         const error = ref('');
 
-        async function logout() {
-          try {
-            await fetch('/api/users/logout', { method: 'POST', credentials: 'include' });
-            window.location.href = '/index.html';
-          } catch (err) {
-            error.value = 'Failed to log out';
-          }
-        }
-
         async function loadWalks() {
           try {
             const res = await fetch('/api/walks');
