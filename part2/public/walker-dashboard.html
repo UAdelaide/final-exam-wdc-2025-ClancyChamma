@@ -52,7 +52,8 @@
             if (!response.ok)
             throw new Error ('Failed to fetch user data');
           }
-          const userData = await response
+          const userData = await response.json();
+          
         }
 
         async function loadWalkRequests() {
