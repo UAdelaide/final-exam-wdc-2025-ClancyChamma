@@ -1,13 +1,6 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-const session = require('express-session');
-
-const app = express();
-
-// Middleware
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
     secret: proccess.env.SESSION_SECRET || 'dogwalksecret',
     resave: false,
@@ -17,6 +10,14 @@ app.use(session({
         maxAge: 24 * 60 * 60 * 1000
     }
 }));
+const session = require('express-session');
+
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/public')));
+
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
