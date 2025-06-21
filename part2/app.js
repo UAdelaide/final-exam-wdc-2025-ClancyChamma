@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
 require('dotenv').config();
 app.use(session({
     secret: proccess.env.SESSION_SECRET || 'dogwalksecret',
@@ -10,7 +11,6 @@ app.use(session({
         maxAge: 24 * 60 * 60 * 1000
     }
 }));
-const session = require('express-session');
 
 const app = express();
 
