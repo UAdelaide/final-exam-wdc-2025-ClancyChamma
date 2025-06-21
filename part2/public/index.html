@@ -59,8 +59,8 @@
               user.value = data;
               isLoggedIn.value = true;
             }
-          } catch {
-            
+          } catch () {
+            console.error('Error checking failed:', error);
           }
         }
         return {
