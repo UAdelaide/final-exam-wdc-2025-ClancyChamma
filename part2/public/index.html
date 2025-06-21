@@ -96,6 +96,21 @@
 
 
         checkSession(); {
+          return {
+            loginForm,
+            isLoggedIn,
+            user,
+            loginError,
+            login,
+            dashboardLink,
+            logout: async () => {
+              await fetch('/api/user/logout');
+              isLoggedIn.value = false;
+              user.value = null;
+              loginForm.value = { username: '', password: '' };
+              loginError.value = '';
+            },
+          };
           message: 'Welcome to the Dog Walking Service!'
         };
       }
