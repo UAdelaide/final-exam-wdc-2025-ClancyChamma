@@ -194,7 +194,6 @@ function login(){
             } else if (response.role === 'walker') {
                 window.location.href = 'walker-dashboard.html';
             }
-                alert("Unknown role: " + response.role);
             }
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
