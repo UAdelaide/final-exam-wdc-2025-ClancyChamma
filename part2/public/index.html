@@ -74,7 +74,7 @@
               throw new Error(result.error || 'Login failed');
             }
 
-            
+            if (result.role === 'owner')
           }
         }
       }
