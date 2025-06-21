@@ -16,7 +16,7 @@ app.use(session({
         secure: process.env.NODE_ENV === 'production',
         maxAge: 24 * 60 * 60 * 1000
     }
-}))
+}));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
