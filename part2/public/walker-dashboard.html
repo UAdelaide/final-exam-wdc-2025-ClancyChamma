@@ -48,12 +48,12 @@
 
         async function getCurrentUser() {
           try {
-            const response = wait fetch('/api/user/me');
+            const response = await fetch('/api/user/me');
             if (!response.ok)
             throw new Error ('Failed to fetch user data');
           }
           const userData = await response.json();
-          
+
         }
 
         async function loadWalkRequests() {
