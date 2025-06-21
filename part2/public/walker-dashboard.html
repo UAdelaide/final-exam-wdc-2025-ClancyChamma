@@ -51,10 +51,12 @@
             const response = await fetch('/api/user/me');
             if (!response.ok) {
             throw new Error ('Failed to fetch user data');
-          }
-          const userData = await response.json();
+            }
+            const userData = await response.json();
           currentUser.value = userDate;
           return userData;
+          }
+
         }
 
         async function loadWalkRequests() {
