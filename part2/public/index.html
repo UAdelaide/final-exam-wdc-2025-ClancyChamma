@@ -58,8 +58,9 @@
               const data = await response.json();
               user.value = data;
               isLoggedIn.value = true;
-
             }
+          } catch {
+            
           }
         }
         return {
