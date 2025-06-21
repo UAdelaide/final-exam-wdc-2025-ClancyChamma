@@ -103,15 +103,9 @@
             loginError,
             login,
             dashboardLink,
-            logout: async () => {
-              await fetch('/api/user/logout');
-              isLoggedIn.value = false;
-              user.value = null;
-              loginForm.value = { username: '', password: '' };
-              loginError.value = '';
+            logout
             },
           };
-          message: 'Welcome to the Dog Walking Service!'
         };
       }
     }).mount('#app');
